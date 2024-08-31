@@ -72,10 +72,12 @@ bool chooseWhoStarts() {
 }
 
 void PrintPlayerHand(const vector<Card>& cards) {
+    cout << "Le tue carte:" << endl;
     for (size_t i = 0; i < cards.size(); ++i) {
         const Card& card = cards[i];
         cout << "Carta " << i + 1 << ": " << NumToString(card.num) << " di " << SemeToString(card.seme) << endl;
     }
+    cout << endl;
 }
 
 void Draw(vector<Card> &player, vector<Card> &deck){
@@ -146,7 +148,7 @@ Card PlayerTurn(vector<Card> &player){
         }
     }
     Card chosenCard = player[input - 1];
-    cout << "   Hai giocato " << NumToString(chosenCard.num) << " di " << SemeToString(chosenCard.seme) << endl <<endl;
+    cout << "   Hai giocato " << NumToString(chosenCard.num) << " di " << SemeToString(chosenCard.seme) <<endl;
     player.erase(player.begin() + input - 1);
     return chosenCard;
 }
@@ -297,7 +299,7 @@ int main(){
 
     Card LastCard = deck.front();
     Seme briscola = LastCard.seme;
-    cout << "L'ultima carta nel mazzo è: " << NumToString(LastCard.num) << " di " << SemeToString(LastCard.seme) << endl << endl; 
+    cout << "L'ultima carta nel mazzo è: " << NumToString(LastCard.num) << " di " << SemeToString(LastCard.seme) << endl; 
     int PlayerPoints = 0;
     int CPUPoints = 0;
 
